@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="mailto:lars.braubach@hs-bremen.de" method="post" enctype="text/plain">
+      <p>Name: <input type="text" name="Name" size="30" maxlenght="30" /></p>
+      <p>Email: <input type="text" name="Email" size="30" maxlenght="30" /></p>
+      <p>Geschlecht:</p>
+      <p>Männlich<input type="radio" name="Geschlecht" value="Männlich" /></p>
+      <p>Weiblich<input type="radio" name="Geschlecht" value="Weiblich" /></p>
+      <p>keine Angabe<input type="radio" name="Geschlecht" value="keine Angabe" /></p>
+      <p>Problemkategorie:</p>
+      <p>
+        <select name="Problemkategorie" size="3">
+            <option value="Mac läuft nicht">Mac läuft nicht</option>
+            <option value="Windows kaputt">Windows kaputt</option>
+            <option value="Ubuntu im Eimer">Ubuntu im Eimer</option>
+        </select>
+      </p>
+      <p>Beschreibung des Problems</p>
+      <p>
+        <textarea name="Problembeschreibung" cols="50" rows="10">
+        </textarea>
+      </p>
+      <p>
+        <input type="submit" value="Senden" />
+        <input type="reset" value="Reset"/>
+      </p>
+    </form>
+  </body>
+</html>
