@@ -1,0 +1,59 @@
+body {
+    font-family: 'Comic Sans MS', 'Comic Neue', cursive, monospace;
+    background: linear-gradient(135deg, rgba(255, 44, 171, 0.2), rgba(255, 200, 255, 0.3));
+    color: #330033;
+    margin: 0;
+    padding: 2em;
+    text-align: center;
+}
+
+h1 {
+    color: rgb(117, 0, 128);
+    text-shadow: 2px 2px 3px rgba(255, 187, 253, 0.9);
+    font-size: 3em;
+    margin-bottom: 0.3em;
+    animation: bounce 2s infinite ease-in-out;
+}
+
+header,
+footer {
+    background-color: rgba(179, 102, 255, 0.3);
+    border-radius: 12px;
+    padding: 2em;
+    max-width: 900px;
+    margin: 2em auto;
+    box-shadow: 0 0 15px rgba(255, 98, 252, 0.6);
+    transition: transform 0.3s ease;
+}
+
+header:hover,
+footer:hover {
+    transform: scale(1.02);
+}
+
+img {
+    display: block;
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(255, 0, 191, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+img:hover {
+    transform: rotate(-1deg) scale(1.01);
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rezepte mit Farben</title>
+  </head>
+  <body>
+    <style>
+      h1 {
+        color: red;
+        font-style: italic;
+      }
+      li {
+        list-style-type: square;
+      }
+      li:first-child li li {
+        list-style-type: lower-alpha;
+      }
+      li:last-child li {
+        list-style-type: lower-roman;
+      }
+      li:first-child li {
+        color: #1500ff;
+      }
+      li:first-child li li:first-child {
+        font-size: larger;
+        background-color: gold;
+      }
+      li:first-child li li:last-child {
+        background-color: grey;
+      }
+      li:last-child li:first-child {
+        border: 1px solid rgb(255, 0, 0);
+        text-align: right;
+      }
+      li:last-child li {
+        border: 1px solid rgb(255, 0, 0);
+        text-align: center;
+      }
+      li:last-child li:last-child {
+        border: 1px solid rgb(255, 0, 0);
+        text-align: left;
+      }
+    </style>
+    <h1>Rezept</h1>
+    <ul>
+      <li>
+        Zutaten
+        <ul>
+          <li>Butter</li>
+          <li>
+            Eier
+            <ol>
+              <li>Eigelb wird benötigt</li>
+              <li>Eiweiß nicht</li>
+            </ol>
+          </li>
+          <li>Zucker</li>
+          <li>Mehl</li>
+          <li>Milch</li>
+        </ul>
+      </li>
+
+      <li>
+        Ablauf
+        <ol>
+          <li>Butter, Mehl, Milch und Zucker vermengen</li>
+          <li>Eigelb hinzufügen</li>
+          <li>Kneten und in die Schüssel geben</li>
+        </ol>
+      </li>
+    </ul>
+  </body>
+</html>
