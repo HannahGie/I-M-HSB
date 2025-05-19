@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farbverlaeufe</title>
+</head>
+<style>
+    div{
+        width: 250px;
+        height: 250px;
+        float: left;
+    }
+    .firstClass {
+        
+        background: #0000FF;
+        background: linear-gradient(to top, #0000FF 0%, #00FF00 50%, #FF0000 100%);
+    }
+    .secondClass {
+        
+        background: #FF0000;
+        background: linear-gradient(to left, #FF0000 0%, #FFEE00 50%, #FFFFFF 100%);
+    }
+    .thirdClass {
+       
+        background: #FF0000;
+        background: radial-gradient(circle farthest-corner at 11% 11%, #FF0000 1%, #00FF00 15%, #FFFFFF 60%);
+    }
+
+</style>
+<body>
+    <div class="firstClass"></div>
+    <div class="secondClass"></div>
+    <div class="thirdClass"></div>
+</body>
+</html>
