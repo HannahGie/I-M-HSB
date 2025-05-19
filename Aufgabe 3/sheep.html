@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schaafe</title>
+    <style type="text/css">
+
+    .sheep{
+    height: 100px;
+    width: 100px;
+    background-image:url(./sheep.png);
+    background-position:left center;
+    background-repeat:no-repeat;
+    background-size: contain;
+    position: absolute;
+    }
+    .walk {
+    top: 25%;
+    animation: walk 10s linear forwards;
+    }
+    @keyframes walk {
+        0% {
+                transform: translateX(-100px) translateY(0);
+            }
+            10% {
+                transform: translateX(10vw) translateY(-10px);
+            }
+            20% {
+                transform: translateX(20vw) translateY(0);
+            }
+            30% {
+                transform: translateX(30vw) translateY(-8px);
+            }
+            40% {
+                transform: translateX(40vw) translateY(0);
+            }
+            50% {
+                transform: translateX(50vw) translateY(-6px);
+            }
+            60% {
+                transform: translateX(60vw) translateY(0);
+            }
+            70% {
+                transform: translateX(70vw) translateY(-4px);
+            }
+            80% {
+                transform: translateX(80vw) translateY(0);
+            }
+            90% {
+                transform: translateX(90vw) translateY(-2px);
+            }
+            100% {
+                transform: translateX(calc(100vw - 100px)) translateY(0);
+            }
+        }
+
+    .flip {
+    top: 50%;
+    left: 0;
+    animation: flip 10s linear forwards;
+    }
+    @keyframes flip {
+        0% {
+                transform: translateX(0) scaleX(1);
+            }
+            50% {
+                transform: translateX(calc(100vw - 100px)) scaleX(1);
+            }
+            51% {
+                transform: translateX(calc(100vw - 100px)) scaleX(-1); 
+            }
+            99% {
+                transform: translateX(0) scaleX(-1); 
+            }
+            100% {
+                transform: translateX(0) scaleX(1); 
+            }
+        }
+    .orbit {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    animation: rotate 10s linear forwards;
+    transform-origin: center center;
+}
+.orbiter {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) rotate(0deg); 
+    animation: counter-rotate 10s linear forwards;
+}
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes counter-rotate {
+    from {
+        transform: translateX(-50%) rotate(0deg);
+    }
+    to {
+        transform: translateX(-50%) rotate(-360deg);
+    }
+}
+
+    </style>
+    </head>
+    <body>
+        <div class="sheep walk"></div>
+        <div class="sheep flip"></div>
+        <div class="orbit"><div class="sheep orbiter"></div></div>
+
+    </body>
+</html>
