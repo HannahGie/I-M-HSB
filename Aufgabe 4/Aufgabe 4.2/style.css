@@ -1,0 +1,29 @@
+/* style.css */
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.landing {
+  height: 100vh;
+  background: url('airport.png') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.landing h1 {
+  font-size: 3rem;
+  color: white;
+}
+
+.landing button {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  border: none;
+  background: #f09;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
