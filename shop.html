@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Mein Webshop</title>
+</head>
+<body>
+  <h1>Produktkatalog</h1>
+  <table id="productTable" border="1">
+    <thead>
+      <tr>
+        <th>Produktname</th>
+        <th>Preis (€)</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+<h2>Produkt hinzufügen</h2>
+<input id="newName"  placeholder="Name">
+<input id="newPrice" placeholder="Preis" type="number" step="0.01">
+<button id="btnAdd">Hinzufügen</button>
+
+<h2>Produkt löschen</h2>
+<input id="delName"  placeholder="Name">
+<button id="btnDel">Löschen</button>
+<hr>
+  <script>
+  async function refreshTable() {
+    const tableBody = document.querySelector('#productTable tbody');
+    tableBody.innerHTML = '';
+
+    const data = await fetch('/catalog').then(r => r.json());
+    data.forEach(p => {
+      const row = document.createElement('tr');
+      row.innerHTML = `<td>${p.name}</td><td>${p.price.toFixed(2)} €</td>`;
+      tableBody.appendChild(row);
+    });
+  }
+
+  document.getElementById('btnAdd').onclick = async () => {
+    const name  = document.getElementById('newName').value.trim();
+    const price = parseFloat(document.getElementById('newPrice').value);
+    if (!name || isNaN(price)) { alert("Name + Preis!"); return; }
+
+    const res = await fetch('/add', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, price })
+    });
+    if (!res.ok) alert("Fehler: " + (await res.text()));
+    await refreshTable();
+  };
+
+  document.getElementById('btnDel').onclick = async () => {
+    const name = document.getElementById('delName').value.trim();
+    if (!name) { alert("Name angeben!"); return; }
+
+    const res = await fetch('/remove/' + encodeURIComponent(name), { method: 'DELETE' });
+    if (!res.ok) alert("Fehler: " + (await res.text()));
+    await refreshTable();
+  };
+
+  refreshTable();
+</script>
+
+</body>
+</html>
